@@ -1,0 +1,111 @@
+// QuizComponent.js
+
+import React, { useState, useEffect } from 'react';
+import Database from '../../data'; // Importa la base de datos con mayúscula
+import './QuizComponent.css'; // Importa el archivo de estilos CSS
+
+const QuizComponent = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isLoading, setIsLoading] = useState(true); // Iniciar con isLoading en true
+  const [greeting, setGreeting] = useState('');
+  const [finalSaludo, setFinalSaludo] = useState('');
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleFinalSaludo = (event) => {
+    setFinalSaludo(event.target.value);
+  };
+
+  const getMatchingQuestions = () => {
+    const normalizedSearchTerm = searchTerm.toLowerCase().trim();
+    return Database.filter((question) =>
+      question.articulo.toLowerCase().includes(normalizedSearchTerm) ||
+      question.sku.toLowerCase().includes(normalizedSearchTerm) ||
+      question.pregunta.toLowerCase().includes(normalizedSearchTerm)
+    );
+  };
+
+  const matchingQuestions = getMatchingQuestions();
+
+  useEffect(() => {
+    // Obtener la hora actual para determinar el saludo
+    const currentHour = new Date().getHours();
+    let greetingText = '';
+    if (currentHour >= 5 && currentHour < 12) {
+      greetingText = 'Buenos días';
+    } else if (currentHour >= 12 && currentHour < 18) {
+      greetingText = 'Buenas tardes';
+    } else {
+      greetingText = 'Buenas noches';
+    }
+    setGreeting(greetingText);
+  }, []);
+
+  useEffect(() => {
+    // Simular el cartel de carga por 250 milisegundos
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 250);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Establecer isLoading a true al cambiar el término de búsqueda
+    setIsLoading(true);
+
+    // Simular el cartel de carga por 250 milisegundos
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 250);
+
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Buscar pregunta..."
+        value={searchTerm}
+        onChange={handleSearch}
+      />
+<br/>
+<br/>
+      <input
+        type="text"
+        placeholder="Escribe tu saludo final aquí..."
+        value={finalSaludo}
+        onChange={handleFinalSaludo}
+      />
+<br/>
+<br/>
+      {isLoading ? (
+        <p>Cargando...</p>
+      ) : matchingQuestions.length > 0 ? (
+        <div className="cards-container">
+          {matchingQuestions.map((question) => (
+            <div key={question.id} className="card">
+              <h2>Artículo:</h2>
+              <p>{question.articulo}</p>
+
+              <h2>Pregunta:</h2>
+              <p>{question.pregunta}</p>
+
+              <h3>Respuesta Correcta:</h3>
+              <p>
+                {greeting}. {question.respuestaCorrecta} Saludos. {finalSaludo}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>No se encontraron preguntas coincidentes.</p>
+      )}
+    </div>
+  );
+};
+
+export default QuizComponent;
