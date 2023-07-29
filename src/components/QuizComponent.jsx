@@ -68,7 +68,7 @@ const QuizComponent = () => {
     <div>
       <input
         type="text"
-        placeholder="Buscar pregunta..."
+        placeholder="Buscar art/SKU/pregunta..."
         value={searchTerm}
         onChange={handleSearch}
       />
