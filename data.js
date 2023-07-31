@@ -7,7 +7,7 @@ const Database = [
       articulo:"Generico",
       sku:"",
       pregunta: "¿Hacen factura A?",
-      respuestaCorrecta: "Somos agentes de percepción de ingresos brutos. En caso de requerir factura A puede presentar percepciones, las cuales deberán ser abonadas para el envío correcto de su factura",
+      respuestaCorrecta: "Somos agentes de percepción de ingresos brutos. En caso de requerir factura A puede presentar percepciones, las cuales deberán ser abonadas para el envío correcto de su factura.",
     },
     {
       id: 2,
@@ -239,6 +239,13 @@ const Database = [
       sku:"C11CJ67304",
       pregunta: "¿Que tipo de papel Admite esta impresora?",
       respuestaCorrecta: "Te adjunto la descripción de los papeles que maneja: Tamaños de Papel Soportados:Estándar: A4, Carta, Oficio (21,59 cm x 35,56 cm), México-Oficio (21,59 cm x 34,04 cm), Oficio 9 (21,49 cm x 31,5 cm), Folio (21,59 cm x 33,02 cm), Ejecutivo, Media Carta, A6 - Foto: 10 cm x 15 cm (4” x 6”), 16:9 wide (10,2 cm x 18,1 cm), 13 cm x 18 cm (5” x 7”) - Sobres: #10 Definido por el usuario: 54 mm x 86 mm - 215.9 mm x 1.200 mm - Tamaño de Papel Máximo: 215.9 mm x 1.200 mm - Tipos de Papel: Papel normal, Papel especial Epson (Photo Glossy/Semi-gloss, Presentation Paper Matte, High Quality Ink Jet Paper y Sobres) - Capacidad de Papel: Alimentación trasera: hasta 100 hojas (A4/Carta)",
+    },
+    {
+      id: 35,
+      articulo:"Joystick Gamepad Trust Gxt 542 Muta Wireless Multiplataforma",
+      sku:"24790",
+      pregunta: "¿Sirve para ps4 y ps5?",
+      respuestaCorrecta: "Dispositivos compatibles: pc, laptop, gaming console, smartphone, tablet - Consolas Compatibles: Nintendo Switch - Plataformas de software compatibles: WIndows, Android, iOS",
     },
 
 
