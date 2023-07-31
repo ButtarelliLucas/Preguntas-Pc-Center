@@ -1,34 +1,60 @@
 /* QuizComponent.css */
 
+/* Estilos para el contenedor principal */
+/* div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+} */
+
+/* Estilos para el cuadro de búsqueda */
+input[type="text"] {
+  padding: 8px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilos para la sección de instrucciones */
+p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el contenedor de las cards */
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 450px;
-    width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card h2 {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
-  .card p {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .card h3 {
-    font-size: 14px;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Estilos para cada card */
+.card {
+  /* background-color: #858585; */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los títulos */
+h2 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilos para los párrafos */
+p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}

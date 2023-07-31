@@ -1,13 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import QuizComponent from './components/QuizComponent'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [vendedor, setVendedor] = useState("")
-  const [cuenta, setCuenta] = useState("")
 
   return (
     <>

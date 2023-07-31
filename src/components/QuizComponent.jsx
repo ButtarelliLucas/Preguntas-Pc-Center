@@ -20,11 +20,16 @@ const QuizComponent = () => {
 
   const getMatchingQuestions = () => {
     const normalizedSearchTerm = searchTerm.toLowerCase().trim();
-    return Database.filter((question) =>
-      question.articulo.toLowerCase().includes(normalizedSearchTerm) ||
-      question.sku.toLowerCase().includes(normalizedSearchTerm) ||
-      question.pregunta.toLowerCase().includes(normalizedSearchTerm)
-    );
+    const searchKeywords = normalizedSearchTerm.split(/\s+/); // Dividir el searchTerm en palabras clave
+
+    return Database.filter((question) => {
+      // Comprobar si cada palabra clave se encuentra en articulo o pregunta
+      return searchKeywords.every((keyword) =>
+        question.articulo.toLowerCase().includes(keyword) ||
+        question.pregunta.toLowerCase().includes(keyword) ||
+        question.sku.toLowerCase().includes(keyword) 
+      );
+    });
   };
 
   const matchingQuestions = getMatchingQuestions();
@@ -44,15 +49,6 @@ const QuizComponent = () => {
   }, []);
 
   useEffect(() => {
-    // Simular el cartel de carga por 250 milisegundos
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 250);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
     // Establecer isLoading a true al cambiar el término de búsqueda
     setIsLoading(true);
 
@@ -66,22 +62,27 @@ const QuizComponent = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Buscar art/SKU/pregunta..."
-        value={searchTerm}
-        onChange={handleSearch}
-      />
-<br/>
-<br/>
-      <input
-        type="text"
-        placeholder="Escribe tu saludo final aquí..."
-        value={finalSaludo}
-        onChange={handleFinalSaludo}
-      />
-<br/>
-<br/>
+      <div>
+        <p>Ingrese SKU, palabra clave de la pregunta, o parte del nombre de la publicación</p>
+        <input
+          type="text"
+          placeholder="Buscar art/SKU/pregunta..."
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+      </div>
+      <br/>
+      <div>
+        <p>Ingrese saludo final, (PC Center/2012PC/Tienda Oficial) o su nombre, Tambien puede quedar el espacio vacio</p>
+        <input
+          type="text"
+          placeholder="Escribe tu saludo final aquí..."
+          value={finalSaludo}
+          onChange={handleFinalSaludo}
+        />
+      </div>
+      <br/>
+      <br/>
       {isLoading ? (
         <p>Cargando...</p>
       ) : matchingQuestions.length > 0 ? (
@@ -89,7 +90,7 @@ const QuizComponent = () => {
           {matchingQuestions.map((question) => (
             <div key={question.id} className="card">
               <h2>Artículo:</h2>
-              <p>{question.articulo}</p>
+              <p>{question.articulo} / {question.id}</p>
 
               <h2>Pregunta:</h2>
               <p>{question.pregunta}</p>
