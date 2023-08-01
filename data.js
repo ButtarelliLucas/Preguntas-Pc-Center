@@ -224,7 +224,7 @@ const Database = [
       articulo:"Liquid Cooler Master Masterliquid Ml360l V2 Argb White Ed",
       sku:"MLW-D36M-A18PW-RW",
       pregunta: "¿Compatible mother gabinete procesador? ",
-      respuestaCorrecta: " Gabinete: Thermal Take Versa T35 TG, . Procesadores: Intel 10ma gen. SOCKETS DE CPU COMPATIBLES: INTEL: LGA 1700, LGA2066, LGA2011-v3, LGA2011, LGA1200, LGA1151, LGA1150, LGA1155, LGA1156. AMD: AM4, AM3 +, AM3, AM2 +, AM2, FM2 +, FM2, FM1. Mother: MSI B 560M, ",
+      respuestaCorrecta: " Gabinete: Thermal Take Versa T35 TG, XPG Defender Pro . Procesadores: Intel 10ma gen. SOCKETS DE CPU COMPATIBLES: INTEL: LGA 1700, LGA2066, LGA2011-v3, LGA2011, LGA1200, LGA1151, LGA1150, LGA1155, LGA1156. AMD: AM4, AM3 +, AM3, AM2 +, AM2, FM2 +, FM2, FM1. Mother: MSI B 560M, ",
     },
     {
       id: 33,
@@ -312,10 +312,10 @@ const Database = [
     },
     {
       id: 45,
-      articulo: "",
-      sku: "",
-      pregunta: "",
-      respuestaCorrecta: "",
+      articulo: "Liquid Cooler Master Masterliquid Ml360l V2 Argb Intel Amd",
+      sku: "MLW-D36M-A18PA-R2",
+      pregunta: "¿Viene con líquido? ¿o se compra aparte?",
+      respuestaCorrecta: "Incluye el liquido.",
     },
     {
       id: 46,

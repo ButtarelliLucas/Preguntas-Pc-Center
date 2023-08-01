@@ -8,9 +8,9 @@ const Navbar = () => {
      
 
       <div className="navbar-container">
-      <a className= "logo" href="" target="_blank">
-          <img src="https://pccenterweb.com.ar/web/image/website/1/logo/PC%20Center%20Computers%20%7C%20Todo%20en%20Tecnolog%C3%ADa?unique=f2bc1a9" className="" alt="Vite logo" />
-        </a>
+      <NavLink to="/home">
+          <img src="https://pccenterweb.com.ar/web/image/website/1/logo/PC%20Center%20Computers%20%7C%20Todo%20en%20Tecnolog%C3%ADa?unique=f2bc1a9" className="logo" alt="Vite logo" />
+          </NavLink>
             <NavLink to="/ml-preguntas" activeClassName="active-link">
               <button>ML Preguntas</button>
             </NavLink>
