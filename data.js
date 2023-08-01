@@ -319,10 +319,10 @@ const Database = [
     },
     {
       id: 46,
-      articulo: "",
-      sku: "",
-      pregunta: "",
-      respuestaCorrecta: "",
+      articulo: "Mouse Microsoft Modern Mobile Inalambrico Bluetooth Wireless",
+      sku: "KTF-00016",
+      pregunta: "Es compatible con Mac con/sin puerto usb?",
+      respuestaCorrecta: "En la pagina del fabricante no especifica funcionamiento con otros sistemas operativos que no sean Windows, y se empareja vía bluetooth. No podemos garantizar el correcto funcionamiento del mismo en otros sistemas operativos.",
     },
     {
       id: 47,
