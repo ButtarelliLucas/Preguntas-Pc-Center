@@ -305,10 +305,10 @@ const Database = [
     },
     {
       id: 44,
-      articulo: "",
-      sku: "",
-      pregunta: "",
-      respuestaCorrecta: "",
+      articulo: "Concentrador Hub Cooler Master Masterfan Argb Pwm 6 Puertos",
+      sku:"MFX-ZHHN-1NNN6-R1",
+      pregunta: "¿Compatibilidad, Compatible?",
+      respuestaCorrecta: "Gabinetes compatible: Thermaltake V250 TG ARGB,",
     },
     {
       id: 45,

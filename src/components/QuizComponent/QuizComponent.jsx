@@ -116,7 +116,7 @@ const QuizComponent = () => {
               {group.preguntas.map((pregunta, i) => (
                 <div key={i}>
                   <p className="pregunta-text">
-                    <strong>{i + 1}. {pregunta}</strong>
+                    <strong>{i + 1}. {pregunta} </strong>
                   </p>
                   <p className="respuesta-text"> {greeting}. {group.respuestas[i]} Saludos. {finalSaludo} </p>
                 </div>
