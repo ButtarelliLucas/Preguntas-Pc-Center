@@ -1,7 +1,7 @@
 // QuizComponent.js
 
 import React, { useState, useEffect } from 'react';
-import Database from '../../data';
+import Database from '../../../data';
 import './QuizComponent.css';
 
 const QuizComponent = () => {
@@ -44,7 +44,7 @@ const QuizComponent = () => {
       greetingText = 'Buenas noches';
     }
     setGreeting(greetingText);
-  }, []);
+  }, [searchTerm]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -118,7 +118,7 @@ const QuizComponent = () => {
                   <p className="pregunta-text">
                     <strong>{i + 1}. {pregunta}</strong>
                   </p>
-                  <p className="respuesta-text"> {group.respuestas[i]} Saludos. </p>
+                  <p className="respuesta-text"> {greeting}. {group.respuestas[i]} Saludos. {finalSaludo} </p>
                 </div>
               ))}
             </div>

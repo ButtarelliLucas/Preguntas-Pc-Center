@@ -1,23 +1,34 @@
 
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import QuizComponent from './components/QuizComponent'
+import Error from './components/Error/Error'
+import Home from './components/Home/Home'
+import Navbar from './components/Navbar/Navbar'
+import QuizComponent from './components/QuizComponent/QuizComponent'
+import QuizMensajeria from './components/QuizMensajeria/QuizMensajeria'
 
-function App() {
+
+export default function App() {
 
   return (
     <>
-      <div>
-        <a className= "logo" href="" target="_blank">
-          <img src="https://pccenterweb.com.ar/web/image/website/1/logo/PC%20Center%20Computers%20%7C%20Todo%20en%20Tecnolog%C3%ADa?unique=f2bc1a9" className="" alt="Vite logo" />
-        </a>
-
-      </div>
-      <h2>Preguntas + Respuestas</h2>
-
-      <QuizComponent></QuizComponent>
+    <div className='app-container'>
+    <Navbar />
       
+      <div className='content-container'>
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/ml-preguntas"element={<QuizComponent/>}/>
+        <Route path="/ml-mensajeria"element={<QuizMensajeria/>}/>
+        
+
+        <Route path="/404" element={<Error/>} />
+        <Route path="*" element={<Navigate to="/404" />} />
+      </Routes>
+      </div>
+    </div>
     </>
   )
 }
 
-export default App
