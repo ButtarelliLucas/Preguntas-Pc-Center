@@ -15,12 +15,12 @@ const Database2 = [
         id: 3,
         tipo: "RESPUESTAS BASICAS",
         pregunta: "",
-        respuestaCorrecta: "Las formas de pago son en efectivo, tarjeta de débito, crédito en 1 pago y/o transferencia. - Solo tenemos cuotas con recargo con tarjetas VISA, MASTER O AMEX BANCARIZADAS - 3 cuotas con 11% de recargo - 6 cuotas con 21% de recargo - 12 cuotas con 46% de recargo - 18 cuotas con 74% de recargo." },
+        respuestaCorrecta: "Las formas de pago son en efectivo, tarjeta de débito, crédito en 1 pago y/o transferencia. // Solo tenemos cuotas con recargo con tarjetas VISA, MASTER O AMEX BANCARIZADAS // 3 cuotas con 11% de recargo // 6 cuotas con 21% de recargo // 12 cuotas con 46% de recargo // 18 cuotas con 74% de recargo." },
       {
         id: 4,
         tipo: "RESPUESTAS BASICAS",
         pregunta: "",
-        respuestaCorrecta: "Gracias por su compra! - En el detalle de la misma podrá ver el seguimiento del envío una vez el correo seleccionado por ML retire la compra de nuestro local. Deberá entrar en el link que le activará Mercado Envíos y allí podrá ver el correo que le asignen."
+        respuestaCorrecta: "Gracias por su compra! // En el detalle de la misma podrá ver el seguimiento del envío una vez el correo seleccionado por ML retire la compra de nuestro local. Deberá entrar en el link que le activará Mercado Envíos y allí podrá ver el correo que le asignen."
       },
       {
         id: 5,
@@ -32,7 +32,7 @@ const Database2 = [
         id: 6,
         tipo: "FACTURACION",
         pregunta: "",
-        respuestaCorrecta: "Gracias por su compra! -  Ya se informó al área encargada para que realicen la factura correspondiente, te la estarán enviando por este medio. - En caso de presentar percepciones, se lo estarán informando, una vez que su compra llegue al punto de entrega."
+        respuestaCorrecta: "Gracias por su compra! //  Ya se informó al área encargada para que realicen la factura correspondiente, te la estarán enviando por este medio. // En caso de presentar percepciones, se lo estarán informando, una vez que su compra llegue al punto de entrega."
       },
       {
         id: 7,
@@ -56,7 +56,7 @@ const Database2 = [
         id: 10,
         tipo: "FACTURACION",
         pregunta: "",
-        respuestaCorrecta: "BANCO FRANCES SUCURSAL 16 - DAMARFU S.A. - CUIT 33-70854340-9 - CUENTA CORRIENTE EN $ 016335/7 - CBU 0170016920000001633571 - Por favor, adjuntar comprobante una vez efectuado el pago ya que es la única forma de verificarlo y validarlo.",
+        respuestaCorrecta: "BANCO FRANCES SUCURSAL 16 // DAMARFU S.A. // CUIT 33-70854340-9 // CUENTA CORRIENTE EN $ 016335/7 // CBU 0170016920000001633571 // Por favor, adjuntar comprobante una vez efectuado el pago ya que es la única forma de verificarlo y validarlo.",
       },
       {
         id: 11,
@@ -134,13 +134,13 @@ const Database2 = [
         id: 23,
         tipo: "RMA",
         pregunta: "",
-        respuestaCorrecta: "Si esta teniendo inconvenientes con el producto debe escribirnos a nuestro mail de garantía, enviando usuario de ML, fecha de compra y describiendo el problema lo más detallado posible para una mejor atención del técnico quien se comunicara via mail, de ser útil incluir fotos y videos. - MAIL DE GARANTIAS: rma@pccenter.com.ar"
+        respuestaCorrecta: "Si esta teniendo inconvenientes con el producto debe escribirnos a nuestro mail de garantía, enviando usuario de ML, fecha de compra y describiendo el problema lo más detallado posible para una mejor atención del técnico quien se comunicara via mail, de ser útil incluir fotos y videos. / MAIL DE GARANTIAS: rma@pccenter.com.ar"
       },
       {
         id: 24,
         tipo: "RMA",
         pregunta: "",
-        respuestaCorrecta: "Puede acercarse a nuestro local ubicado en Villa Crespo sobre Avenida Juan B Justo 3714, esquina Cucha Cucha con el producto en su caja y completo, tal cual lo recibió y con la factura de la compra para que lo revise uno de nuestros técnicos y hacer valer la garantía. - Nuestro horario de atención es de lunes a viernes de 9 a 19hs y el sábado estamos de 10 a 17hs."
+        respuestaCorrecta: "Puede acercarse a nuestro local ubicado en Villa Crespo sobre Avenida Juan B Justo 3714, esquina Cucha Cucha con el producto en su caja y completo, tal cual lo recibió y con la factura de la compra para que lo revise uno de nuestros técnicos y hacer valer la garantía. // Nuestro horario de atención es de lunes a viernes de 9 a 19hs y el sábado estamos de 10 a 17hs."
       },
       {
         id: 25,
