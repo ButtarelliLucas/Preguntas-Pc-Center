@@ -181,7 +181,7 @@ const Database2 = [
 	{
 	id: 31,
         tipo: "CANCELACION",
-        pregunta: "se puede agregar pero no es necesario agregar la pregunta ",
+        pregunta: "",
         respuestaCorrecta: "Nosotros no podemos cancelar la compra. Si no quiere el producto puede rechazarlo cuando el repartidor llegue al domicilio indicado para la entrega.",
       },
       {
