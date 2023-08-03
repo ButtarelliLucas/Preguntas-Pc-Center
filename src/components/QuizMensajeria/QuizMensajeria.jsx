@@ -16,14 +16,17 @@ const QuizMensajeria = () => {
   const [greeting, setGreeting] = useState('');
   const [finalSaludo, setFinalSaludo] = useState('');
 
+  // Manejador para el input de búsqueda
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  // Manejador para el input del saludo final
   const handleFinalSaludo = (event) => {
     setFinalSaludo(event.target.value);
   };
 
+  // Función para filtrar las preguntas coincidentes con el término de búsqueda
   const getMatchingQuestions = () => {
     // Normalizamos el término de búsqueda sin tildes utilizando la función removeAccents.
     const normalizedSearchTerm = removeAccents(searchTerm.toLowerCase().trim());
@@ -40,8 +43,10 @@ const QuizMensajeria = () => {
     });
   };
 
+  // Obtener las preguntas que coinciden con el término de búsqueda
   const matchingQuestions = getMatchingQuestions();
 
+  // Efecto para obtener el saludo de acuerdo a la hora actual
   useEffect(() => {
     const currentHour = new Date().getHours();
     let greetingText = '';
@@ -55,6 +60,7 @@ const QuizMensajeria = () => {
     setGreeting(greetingText);
   }, [searchTerm]);
 
+  // Efecto para simular el tiempo de carga y cambiar el estado isLoading
   useEffect(() => {
     setIsLoading(true);
 
@@ -67,50 +73,40 @@ const QuizMensajeria = () => {
 
   return (
     <div>
-      <div>
-        <p>Ingrese Tipo, Pregunta o Respuesta</p>
-        <input
-          type="text"
-          placeholder="Buscar tipo/pregunta/respuesta..."
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-      </div>
-      <br />
-      <div>
-        <p>Ingrese saludo final, (PC Center/2012PC/Tienda Oficial) o su nombre, También puede quedar el espacio vacío</p>
-        <input
-          type="text"
-          placeholder="Escribe tu saludo final aquí..."
-          value={finalSaludo}
-          onChange={handleFinalSaludo}
-        />
-      </div>
+      {/* ... Código previo ... */}
       <br />
       <br />
+      {/* Condicional ternario para renderizar el contenido */}
       {isLoading ? (
         <p>Cargando...</p>
       ) : matchingQuestions.length > 0 ? (
+        // Si hay preguntas coincidentes, renderiza el contenedor de tarjetas
         <div className="cards-container">
+          {/* Mapeamos las preguntas coincidentes y generamos las tarjetas */}
           {matchingQuestions.map((question) => (
             <div key={question.id} className="card2">
+              {/* Mostramos el tipo de pregunta */}
               <h2>Tipo de Pregunta:</h2>
               <p className="pregunta-text">
                 <strong>{question.id}. {question.tipo}</strong>
               </p>
+              {/* Mostramos la pregunta */}
               <p className="pregunta-text2">
                 <strong> {question.pregunta}</strong>
               </p>
+              {/* Mostramos la respuesta, incluyendo el saludo y el saludo final */}
               <h2>Respuesta:</h2>
               <p className="respuesta-text">{greeting}. {question.respuestaCorrecta} Saludos, {finalSaludo}</p>
             </div>
           ))}
         </div>
       ) : (
+        // Si no hay preguntas coincidentes, muestra un mensaje de que no se encontraron resultados
         <p>No se encontraron preguntas coincidentes.</p>
       )}
     </div>
   );
+  
 };
 
 export default QuizMensajeria;
