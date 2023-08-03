@@ -1,38 +1,46 @@
-// QuizComponent.js
-
+// Importa las dependencias necesarias
 import React, { useState, useEffect } from 'react';
-import Database from '../../../data';
+import unorm from 'unorm'; // Importa la función nfc de unorm para normalizar cadenas de texto con tildes
+import Database from '../../../data'; // Importa la base de datos original (quiz de preguntas)
+
+// Importa los estilos del componente
 import './QuizComponent.css';
 
 const QuizComponent = () => {
+  // Estados para el término de búsqueda, carga, saludo y saludo final
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [greeting, setGreeting] = useState('');
   const [finalSaludo, setFinalSaludo] = useState('');
 
+  // Función para manejar cambios en el término de búsqueda
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  // Función para manejar cambios en el saludo final
   const handleFinalSaludo = (event) => {
     setFinalSaludo(event.target.value);
   };
 
+  // Función para obtener las preguntas que coinciden con el término de búsqueda
   const getMatchingQuestions = () => {
-    const normalizedSearchTerm = searchTerm.toLowerCase().trim();
+    const normalizedSearchTerm = unorm.nfc(searchTerm.toLowerCase().trim()); // Normaliza el término de búsqueda
     const searchKeywords = normalizedSearchTerm.split(/\s+/);
 
     return Database.filter((question) => {
       return searchKeywords.every((keyword) =>
-        question.articulo.toLowerCase().includes(keyword) ||
-        question.pregunta.toLowerCase().includes(keyword) ||
-        question.sku.toLowerCase().includes(keyword)
+        unorm.nfc(question.articulo.toLowerCase()).includes(keyword) ||
+        unorm.nfc(question.pregunta.toLowerCase()).includes(keyword) ||
+        unorm.nfc(question.sku.toLowerCase()).includes(keyword)
       );
     });
   };
 
+  // Obtiene las preguntas que coinciden con el término de búsqueda
   const matchingQuestions = getMatchingQuestions();
 
+  // Efecto para establecer el saludo adecuado según la hora del día
   useEffect(() => {
     const currentHour = new Date().getHours();
     let greetingText = '';
@@ -46,6 +54,7 @@ const QuizComponent = () => {
     setGreeting(greetingText);
   }, [searchTerm]);
 
+  // Efecto para simular una carga y luego mostrar el contenido
   useEffect(() => {
     setIsLoading(true);
 
@@ -78,10 +87,12 @@ const QuizComponent = () => {
     }));
   };
 
+  // Agrupa las preguntas y respuestas por artículo
   const groupedQuestions = groupQuestionsByArticle(matchingQuestions);
 
   return (
     <div>
+      {/* Barra de búsqueda */}
       <div>
         <p>Ingrese SKU, palabra clave de la pregunta, o parte del nombre de la publicación</p>
         <input
@@ -92,6 +103,7 @@ const QuizComponent = () => {
         />
       </div>
       <br />
+      {/* Input para el saludo final */}
       <div>
         <p>Ingrese saludo final, (PC Center/2012PC/Tienda Oficial) o su nombre, Tambien puede quedar el espacio vacio</p>
         <input
@@ -103,9 +115,11 @@ const QuizComponent = () => {
       </div>
       <br />
       <br />
+      {/* Muestra un mensaje de carga o las preguntas y respuestas */}
       {isLoading ? (
         <p>Cargando...</p>
       ) : matchingQuestions.length > 0 ? (
+        // Contenedor para mostrar las preguntas y respuestas agrupadas por artículo
         <div className="cards-container">
           {groupedQuestions.map((group, index) => (
             <div key={group.articulo} className="card">
@@ -113,11 +127,13 @@ const QuizComponent = () => {
               <p className="articulo-name">{group.articulo}</p>
 
               <h2>Preguntas y Respuestas:</h2>
+              {/* Mapea las preguntas y respuestas del artículo actual */}
               {group.preguntas.map((pregunta, i) => (
                 <div key={i}>
                   <p className="pregunta-text">
                     <strong>{i + 1}. {pregunta} </strong>
                   </p>
+                  {/* Muestra el saludo, la respuesta y el saludo final */}
                   <p className="respuesta-text"> {greeting}. {group.respuestas[i]} Saludos. {finalSaludo} </p>
                 </div>
               ))}

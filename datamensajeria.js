@@ -2,7 +2,7 @@ const Database2 = [
     {
         id: 1,
         tipo: "RESPUESTAS BASICAS",
-        pregunta: "",
+        pregunta: "12345",
         respuestaCorrecta: "Nuestro local se encuentra ubicado en Villa Crespo sobre Avenida Juan B Justo 3714, esquina Cucha Cucha y el horario de atención es de lunes a viernes de 9 a 19hs y los sábados estamos de 10 a 17hs.",
       },
       {

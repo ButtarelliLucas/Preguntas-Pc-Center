@@ -74,7 +74,7 @@ const Database = [
     },
     {
       id:11,
-      articulo:"Impresora A Color Multifunción Hp Deskjet Ink Advantage 2375",
+      articulo:"Impresora A Color Multifunción Hp Deskjet Ink Advantage 2375 blanca y verde 200V - 240V",
       sku:"7WQ01A",
       pregunta: "¿Se puede conectar a una red 5.8Ghz? o solo acepta 2.4Ghz??",
       respuestaCorrecta: "No es compatible con conexión inalámbrica/wifi.",

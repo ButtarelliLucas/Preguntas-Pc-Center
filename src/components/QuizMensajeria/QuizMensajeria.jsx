@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Database2 from '../../../datamensajeria.js';
 import './QuizMensajeria.css';
 
+// Función para eliminar las tildes de una cadena de texto
+const removeAccents = (text) => {
+  // La función normalize('NFD') separa los caracteres acentuados en sus componentes de caracteres
+  // y el método replace con la expresión regular /[\u0300-\u036f]/g elimina esos componentes,
+  // lo que resulta en la cadena de texto sin tildes.
+  return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+};
+
 const QuizMensajeria = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(true);
@@ -17,14 +25,17 @@ const QuizMensajeria = () => {
   };
 
   const getMatchingQuestions = () => {
-    const normalizedSearchTerm = searchTerm.toLowerCase().trim();
+    // Normalizamos el término de búsqueda sin tildes utilizando la función removeAccents.
+    const normalizedSearchTerm = removeAccents(searchTerm.toLowerCase().trim());
     const searchKeywords = normalizedSearchTerm.split(/\s+/);
 
+    // Utilizamos la función filter para buscar coincidencias en la base de datos
     return Database2.filter((question) => {
       return searchKeywords.every((keyword) =>
-        question.tipo.toLowerCase().includes(keyword) ||
-        question.pregunta.toLowerCase().includes(keyword) ||
-        question.respuestaCorrecta.toLowerCase().includes(keyword)
+        // Aquí también aplicamos la normalización sin tildes a cada propiedad de pregunta en la base de datos
+        removeAccents(question.tipo.toLowerCase()).includes(keyword) ||
+        removeAccents(question.pregunta.toLowerCase()).includes(keyword) ||
+        removeAccents(question.respuestaCorrecta.toLowerCase()).includes(keyword)
       );
     });
   };
@@ -86,6 +97,8 @@ const QuizMensajeria = () => {
               <h2>Tipo de Pregunta:</h2>
               <p className="pregunta-text">
                 <strong>{question.id}. {question.tipo}</strong>
+              </p>
+              <p className="pregunta-text2">
                 <strong> {question.pregunta}</strong>
               </p>
               <h2>Respuesta:</h2>
