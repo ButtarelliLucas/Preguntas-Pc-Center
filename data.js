@@ -431,17 +431,17 @@ const Database = [
     },
     {
       id: 63,
-      articulo: "",
+      articulo: "Generico",
       sku: "",
-      pregunta: "",
-      respuestaCorrecta: "",
+      pregunta: "Hay posibilidad de que apliquen un descuento y sea sin factura?",
+      respuestaCorrecta: "Los precios en Mercadolibre ya tienen descuentos aplicados y son los publicados. No vendemos sin factura.",
     },
     {
       id: 64,
-      articulo: "",
+      articulo: "Generico",
       sku: "",
-      pregunta: "",
-      respuestaCorrecta: "",
+      pregunta: "¿Es nuevo? ¿Tiene / Viene con garantía?",
+      respuestaCorrecta: "Todos los productos son nuevos y con garantía del fabricante",
     },
     {
       id: 65,
