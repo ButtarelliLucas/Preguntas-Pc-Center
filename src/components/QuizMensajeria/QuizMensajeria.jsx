@@ -73,7 +73,25 @@ const QuizMensajeria = () => {
 
   return (
     <div>
-      {/* ... Código previo ... */}
+<div>
+        <p>Ingrese Tipo, Pregunta o Respuesta</p>
+        <input
+          type="text"
+          placeholder="Buscar tipo/pregunta/respuesta..."
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+      </div>
+      <br />
+      <div>
+        <p>Ingrese saludo final, (PC Center/2012PC/Tienda Oficial) o su nombre, También puede quedar el espacio vacío</p>
+        <input
+          type="text"
+          placeholder="Escribe tu saludo final aquí..."
+          value={finalSaludo}
+          onChange={handleFinalSaludo}
+        />
+      </div>
       <br />
       <br />
       {/* Condicional ternario para renderizar el contenido */}
