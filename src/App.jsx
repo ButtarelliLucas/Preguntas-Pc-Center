@@ -17,8 +17,8 @@ export default function App() {
       
       <div className='content-container'>
       <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
+        {/* <Route path="/" element={<Navigate to="/home" />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/ml-preguntas"element={<QuizComponent/>}/>
         <Route path="/ml-mensajeria"element={<QuizMensajeria/>}/>
         
