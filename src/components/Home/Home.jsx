@@ -7,9 +7,9 @@ const Home = () => {
         <div>
             <img src={logoI} className="logo-container"alt="logo" />
         </div>
-        <div>
+        <h2>
              Pagina en estado más alpha que beta.
-        </div>
+        </h2>
     </div>
   );
 };
